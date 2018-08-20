@@ -1,0 +1,36 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- FontAwesome compiled  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<br><br>
+<div class="card " style="width: 40%; margin-left:35%;">
+		<div class="card-header " ><i class="fa fa-address-card-o icon " style="font-size:35px;color: red;" ></i>&nbsp;&nbsp;&nbsp; &nbsp;<b>Registration Form</b></div>
+
+		<div class="card-block" style="margin-left: 30px;margin-right: 30px;  ">
+    <br>
+
+                    {% load rest_framework %}
+
+
+
+                    <form action="{% url 'register' %}" method="post" novalidate>
+                        {% csrf_token %}
+                        {% render_form serializer template_pack='rest_framework/vertical' %}
+                       <br> <button type="submit" class="btn btn-danger" style="width: 40%;float:right;margin-right: 30%;">Sign in</button>
+<br>
+                        <br><br>
+                    </form>
+        </div>
+</div>
+
+</body>
+</html>
